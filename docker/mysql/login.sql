@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS user_logins (
+  id INT AUTO_INCREMENT NOT NULL,
+  username VARCHAR(32) NOT NULL,
+  password VARCHAR(16) NOT NULL,
+  PRIMARY KEY (id)
+) ENGINE = InnoDB;

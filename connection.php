@@ -3,10 +3,10 @@
 <?php
 
 class DBConnection {
-	private $servername = "localhost";
-	private $username = "root";
-	private $password = "";
-	private $dbname = "php_course";
+	private $servername = "mysql";
+	private $username = "developer";
+	private $password = "safepass";
+	private $dbname = "login";
 
 	private $connection;
 
