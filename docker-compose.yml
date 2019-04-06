@@ -10,9 +10,16 @@ services:
     volumes:
       - ./:/srv/www/api
       - ./docker/php/www.conf:/usr/local/etc/php-fpm.d/www.conf
+    working_dir: /srv/www/api
     environment:
       MYSQL_USER: developer
       MYSQL_PASSWORD: safepass
+
+  toolbox:
+    image: devdrops/php-toolbox:latest
+    volumes:
+      - ./:/code
+    working_dir: /code
 
   nginx:
     image: nginx:1.13.8
@@ -30,6 +37,7 @@ services:
       - 3306:3306
     volumes:
       - ./docker/mysql:/tmp/tables
+      - ./docker/mysql/data:/var/lib/mysql
     depends_on:
       - php
     environment:
